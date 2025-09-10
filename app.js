@@ -42,6 +42,10 @@ import messageRouter from "./src/routes/message.routes.js";
 import { errorHandler } from "./src/middlewares/error.middlewares.js";
 import { initializeSocketIO } from "./src/socket/index.js";
 
+app.get("/", (req, res) => {
+  res.status(200).send("APIs are working...");
+});
+
 // Routes Definitions
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/chat-app/chats", chatRouter);
